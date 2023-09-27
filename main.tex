@@ -1,0 +1,68 @@
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{subfiles}
+\usepackage[nolist]{acronym}
+\usepackage[backend=biber,style=numeric,]{biblatex}
+\usepackage[english=american]{csquotes}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage[fleqn,tbtags]{mathtools}
+\usepackage{minted}
+\usepackage{amsmath}
+\usepackage{nccmath}
+\usepackage{caption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{subcaption}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+\addbibresource{literatur.bib}
+% alter autoref visualization
+\def\sectionautorefname{Section}
+% subfig setup
+\usepackage[labelformat=simple]{subfig}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\renewcommand{\subfigureautorefname}{\figureautorefname}
+
+\newcommand*\betreuerIES{Christian Gruhl }
+\newcommand*\authorFF{W. Hilal \acfi{etal}}
+
+\renewcommand*\contentsname{Inhaltsverzeichnis}
+\renewcommand*\listfigurename{Abbildungsverzeichnis}
+\renewcommand*\listtablename{Tabellenverzeichnis}
+\newcommand\algorithmautorefname{Algorithm}
+
+\algtext*{EndWhile}% Remove "end while" text
+\algtext*{EndIf}% Remove "end if" text
+\algtext*{EndFor}% Remove "end for" text
+
+\begin{document}
+
+\title{Identifying fiscal fraud with anomaly detection techniques}
+\author{Klara M. Gutekunst}
+\institute{University of Kassel, 34125 Kassel, Germany
+\email{klara.gutekunst@student.uni-kassel.com}}
+
+\maketitle
+\input{sections/abstract.tex}
+\input{sections/introduction.tex}
+\input{sections/problem.tex}
+\input{sections/state_of_art.tex}
+
+\section{Main part}
+\label{sec:main_part}
+Since it is most applicable to the problem presented in \autoref{sec:problem}, this section only focuses on unsupervised anomaly detection techniques.
+The remainder of this paper concentrates on transferable problems, such as credit card fraud, because there are more scientific papers covering these problems.
+
+\input{sections/isolation_forrest.tex}
+\input{sections/autoencoder.tex}
+\input{sections/ARIMA.tex}
+\input{sections/self_organizing_maps.tex}
+\input{sections/conclusion.tex}
+
+\input{sections/abkuerzungsverzeichnis}
+
+\printbibliography
+\end{document}

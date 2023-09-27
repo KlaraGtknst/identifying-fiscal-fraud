@@ -1,0 +1,14 @@
+\section{Problem}
+\label{sec:problem}
+A government's tax office has various ways to detect fraudulent activities of companies that deliberately take actions to pay fewer taxes than they are supposed to pay. One way of detecting fraudulent activities is using the cash register data of companies to identify anomalies, which is currently performed by humans.
+Data mining techniques can support this process.
+
+The cash register of a business is supposed to log every transaction and thus, is a valuable resource for analysing the business' finances.
+The data's structure depends on the cash register system. 
+The documentation of an exemplary cash register's data structure is given in \cite{Vectron}. Every transaction is logged with attributes such as \texttt{date}, \texttt{time}, \texttt{clerk}, \texttt{identification}, and \texttt{item}. 
+When exporting the data it is partitioned and stored in different files which are linked via keys.
+
+Some systems have data subsets that are redundant, due to the fact that there are data files considered fiscally ir-/relevant. In this context, it is important to investigate both data subsets considered fiscally ir- and relevant, since it is possible that some anomalies are only evident in files consisting of non-aggregated entries, which may be considered fiscally irrelevant according to the documentation of the cash register system.
+
+The structures of data sets from different cash register systems usually have some similarities, since there are standards for cash register data set by the \acfi{IFRS} according to \cite{ff_review_techniques}.
+One similarity in any cash register data set is periodic behaviour, for instance in features such as \texttt{time of transaction}. A hypothesis regarding the data is that there are similarities between weekday data over months.

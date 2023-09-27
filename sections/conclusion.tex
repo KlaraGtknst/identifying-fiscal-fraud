@@ -1,0 +1,23 @@
+\section{Conclusion and Outlook}
+
+The approach \ac{IF} described in \cite{liu2008isolation} appears to be adaptable to the problem outlined in \autoref{sec:problem}. However, due to the fact that the data set has many (irrelevant) attributes, it is possible that the technique is time-consuming if the choice of split features is bad. To overcome this issue, a prior feature selection would be appropriate.
+
+The issues of the approach from \cite{cf_AE} using a two-stage technique including an \ac{AE} are that the second stage models proposed are using labelled data and that the model has to be retrained periodically because it does not adapt to changes in the pattern of fraud. 
+The first problem can be resolved because the authors state that any classifier (i.e. an unsupervised one) or the reconstruction error can be used instead. 
+The second issue is only a problem if the data from \autoref{sec:problem} contains evolving different types of fraud. Applying the method to multiple sub-samples of the data could be a solution.
+
+The additional \ac{RF} after the \ac{AE} proposed by \cite{AE_RF} to form the \ac{AE-PRF} is an example of the usage of an \ac{AE}. However, the quality of the threshold $\theta*$ strongly depends on the choice of metric. It is possible that human resources are required in order to provide a suitable metric, due to the fact that there is no labelled data available.
+
+A problem of \ac{ARIMA} stated by the authors of \cite{fd_ARIMA} is that \ac{ARIMA} assumes the data comes from  observations equally spaced in time. 
+However, transaction times of the problem outlined in \autoref{sec:problem} are unequally spaced. 
+This issue can be solved using aggregated data, namely, aggregating data according to their dates creating equally spaced data.
+Moreover, the approach requires training on a subset of exclusively legitimate transactions which in this case cannot be provided. 
+Furthermore, the specific approach identifies anomalies solely on the number of transactions conducted and thus, only uses a fraction of the features present in the data from \autoref{sec:problem}.
+
+As stated in \cite{fd_SOM}, \ac{SOM} can be used as a clustering technique in order to detect fraudulent accounts. Using the representation of a reference user account (typical traits and behaviours) as the centre of the circle illustrating the threshold could possibly further improve the approach.
+However, this approach may not be very applicable to the problem at hand, because it identifies whole user accounts as fraudulent based on the assumption that the majority of individual transactions classify likewise to the classification of the whole user account, which differs from the problem outlined in \autoref{sec:problem}.
+
+Taking all the points stated above into account, the \ac{IF} appears to be the most applicable approach to face the problem at hand. However, with slight alterations, the other unsupervised learning methods seem to be valuable means to tackle the task of tax evasion detection.
+It may even be desirable to consider ensemble techniques using the methods discussed. For instance, first \ac{AE} may be used for a dimension reduction and then \ac{IF} can be applied to isolate the anomalies.
+
+Advanced research with regard to these anomaly detection techniques may include comparing the approaches in terms of performance.
