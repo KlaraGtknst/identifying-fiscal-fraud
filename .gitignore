@@ -1,0 +1,18 @@
+*.aux
+*.bbl
+*.log
+*.blg
+*.out
+*.toc
+*.run.xml
+*.synctex.gz
+*.lof
+*.lol
+*.lot
+.DS_Store
+_minted-main/
+Exposé/
+Formulare/
+Literatur/
+# exclude temp Office files
+~$*
